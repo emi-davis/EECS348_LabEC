@@ -8,12 +8,26 @@ string getInput() {
   cin >> temp;
   return temp;
 }
+
+bool checkValid(string user_input) {
+  if (user_input.empty()) return false;
+  char first = user_input.front();
+  char last = user_input.back();
+  return !(first == '+' || first == '-' || last == '+' || last == '-');
+}
+
 double extractNumeric(string user_input) {
+  if (checkValid(user_input)) {
+    cout << "valid";
+  } else {
+    cout << "invalid";
+  }
   double result;
   return result;
 }
+
 int main() {
   string x = getInput();
-  cout << x;
+  extractNumeric(x);
   return 0;
 }
